@@ -12,5 +12,11 @@ Créez le fichier .env
 cp .env.example .env
 ```
 Dans ce fichier, indiquez l'utilisateur (DB_USER) et le mot de passe (DB_PASWWORD) permettant de se connecter à la base de données.
-Moifiez éventuellement le nom de la base de donnes (DB_DATABASE)
+Modifiez éventuellement le nom de la base de donnes (DB_DATABASE)
 
+## Base de données
+Le dump SQL permettant de créer la base de données se trouve dans le fichier database/dump.sql
+
+Quelques données sont également présentes pour permettre de faires quelques tests
+
+Vous pouvez insérez les données à l'aide de l'éditeur SQL de adminer ou bien en ligne de commande du moteur SQL
