@@ -1,0 +1,27 @@
+{% extends "layout/main_base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col s12 m6"><img src={{url_for('static', filename='images/concert.webp') }} alt=""></div>
+    <div class="col s12 m6">
+        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page
+    </div>
+
+</div>
+
+<div class="container is-fluid"
+Les artistes en BDD
+<ul>
+{% for artiste in artistes %}
+    <li>{{artiste.nom}}</li>
+{% endfor %}
+</ul>
+</div>
+Les utilisateurs
+<ul>
+{% for user in users %}
+    <li>{{user.email}} - role {{user.role.nom}}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

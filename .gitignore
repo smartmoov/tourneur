@@ -1,0 +1,39 @@
+# Virtual environment
+.venv/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Log files
+*.log
+
+# Database
+*.sqlite
+*.db
+
+# Local configuration
+instance/
+
+# Environment variables
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Visual Studio Code config
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db

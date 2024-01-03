@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Le site des tourneurs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{{ url_for('index') }}" class="navbar-item">
+                                Accueil
+                            </a>
+                            <a href="{{ url_for('profile') }}" class="navbar-item">
+                                Profil
+                            </a>
+                            <a href="{{ url_for('login') }}" class="navbar-item">
+                                Se connecter
+                            </a>
+                            <a href="{{ url_for('signup') }}" class="navbar-item">
+                                S'enregistrer
+                            </a>
+                            <a href="{{ url_for('logout') }}" class="navbar-item">
+                                Déconnexion
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+
+</body>
+</html>
