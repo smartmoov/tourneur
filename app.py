@@ -8,9 +8,10 @@ import os
 
 app = Flask(__name__)
 app.config.from_object('config.Configuration')
+
 # Generate a nice key using secrets.token_urlsafe()
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", 'pf9Wkove4IKEAXvy-cQkeDPhv9Cb3Ag-wyJILbq_dFw')
-# Bcrypt is set as default SECURITY_PASSWORD_HASH, which requires a salt
+
 # Generate a good salt using: secrets.SystemRandom().getrandbits(128)
 app.config['SECURITY_PASSWORD_SALT'] = os.environ.get("SECURITY_PASSWORD_SALT", '146585145368132386173505678016728509634')
 
@@ -24,7 +25,6 @@ login_manager.login_view = 'login'
 login_manager.init_app(app)
 
 csrf = CSRFProtect(app) 
-
 
 @login_manager.user_loader
 def load_user(user_id):

@@ -52,12 +52,12 @@ def login_post():
         flash('Vérifier les données du formulaire')
         return render_template("login.html", form=form)
     
-#    if (form.remember.data):
-#        remember = True
-#    else:
-#        remember = False
+    if (form.remember.data):
+        remember = True
+    else:
+        remember = False
         
-    login_user(user, remember=False)
+    login_user(user, remember)
     return redirect(url_for('profile'))
     
 @app.route('/signup', methods=['GET'])

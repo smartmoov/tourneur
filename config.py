@@ -1,3 +1,4 @@
+import os;
 # config
 
 class Configuration(object):
@@ -5,7 +6,7 @@ class Configuration(object):
         'name': 'tourneur',
         'engine': 'peewee.MySQLDatabase',
         'user': 'admin',
-        'passwd': 'My7PassWord_9_8A_zE',
+        'passwd': os.environ.get("DB_PASSWORD"),
         'host': 'localhost',
         'port': 3306,
         'charset': 'utf8mb4',
