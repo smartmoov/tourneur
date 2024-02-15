@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-</head>
-<body>
+{% extends "layout/main_base.html" %}
+
+{% block content %}
 
 <h2>Ajout d'un artiste</h2>
 
 <form method="POST" action="{{ url_for('register') }}">
     {{ form.hidden_tag() }}
 
-    <label for="username">Username:</label>
+    <label for="username">Nom:</label>
     {{ form.username(size=20) }}
     {% if form.username.errors %}
         <ul class="errors">
@@ -36,5 +30,4 @@
     <input type="submit" value="Ajouter">
 </form>
 
-</body>
-</html>
+{% endblock %}

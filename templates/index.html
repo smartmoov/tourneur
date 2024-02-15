@@ -2,26 +2,45 @@
 
 {% block content %}
 <div class="row">
-    <div class="col s12 m6"><img src={{url_for('static', filename='images/concert.webp') }} alt=""></div>
-    <div class="col s12 m6">
-        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page
+    <div class="col offset-m1 mt-2">
+        <h1>Le site du tourneur</h1>
     </div>
-
+</div>
+<div class="row mp-1">
+    <div class="col s10 m6">
+        <img src={{url_for('static', filename='images/gig.jpg') }} alt="" class="responsive-img half-width-on-medium">
+    </div>
+    <div class="col s10 m6">
+        <h2>Notre mission</h2>
+        <p>
+            En tant que tourneur dédié, je prends en charge l'intégralité de la logistique liée à vos tournées artistiques. De la réservation des salles à la planification de l'ensemble de votre itinéraire, mon rôle est de simplifier et d'optimiser votre expérience de tournée. Que vous prévoyiez 2 ou 50 dates au cours de l'année, je m'engage à assurer une organisation fluide et efficace pour garantir le succès de chacun de vos spectacles. Concentrez-vous sur votre performance, je m'occupe du reste.
+        </p>
+    </div>
 </div>
 
-<div class="container is-fluid"
-Les artistes en BDD
-<ul>
-{% for artiste in artistes %}
-    <li>{{artiste.nom}}</li>
-{% endfor %}
-</ul>
+<div class="container">
+    <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src={{url_for('static', filename='carousel/nirvana.png')}} alt="nirvana"></a>
+        <a class="carousel-item" href="#two!"><img src={{url_for('static', filename='carousel/rollingstone.png')}} alt="rolling stones"></a>
+        <a class="carousel-item" href="#three!"><img src={{url_for('static', filename='carousel/megadeth.png')}} alt="megadeth"></a>
+        <a class="carousel-item" href="#four!"><img src={{url_for('static', filename='carousel/daftpunk.png')}} alt="Daft Punk"></a>
+        <a class="carousel-item" href="#five!"><img src={{url_for('static', filename='carousel/ledzep.png')}} alt="Led Zeppelin"></a>
+    </div>
 </div>
-Les utilisateurs
-<ul>
-{% for user in users %}
-    <li>{{user.email}} - role {{user.role.nom}}</li>
-{% endfor %}
-</ul>
-
+<div class="container">
+    <h2>Les artistes en BDD</h2>
+    <ul>
+    {% for artiste in artistes %}
+        <li>{{artiste.nom}}</li>
+    {% endfor %}
+    </ul>
+</div>
+<div class="container">
+    <h2>Les utilisateurs</h2>
+    <ul>
+    {% for user in users %}
+        <li>{{user.email}} - role {{user.role.nom}}</li>
+    {% endfor %}
+    </ul>
+</div>
 {% endblock %}

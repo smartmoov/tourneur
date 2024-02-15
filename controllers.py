@@ -6,7 +6,6 @@ from app import app
 from models import Artiste, Adresse, Orchestre, Utilisateur
 from forms import ArtisteForm, UtilisateurForm, LoginForm
 from flask_login import login_user, logout_user, login_required, current_user
-from flask_security import Security, roles_required, roles_accepted
 
 @app.route('/')
 def index():
@@ -53,12 +52,12 @@ def login_post():
         flash('Vérifier les données du formulaire')
         return render_template("login.html", form=form)
     
-#    if (form.remember.data):
-#        remember = True
-#    else:
-#        remember = False
+    if (form.remember.data):
+        remember = True
+    else:
+        remember = False
         
-    login_user(user, remember=False)
+    login_user(user, remember)
     return redirect(url_for('profile'))
     
 @app.route('/signup', methods=['GET'])
@@ -89,7 +88,3 @@ def logout():
 def profile():
     return render_template("/profile.html", name=current_user.nom)
 
-@app.route('/dashboard')
-@roles_accepted('admin')
-def dashboard():
-    return 'dashboard'
